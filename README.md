@@ -1,27 +1,48 @@
-# Customer Feedback Reviewer with Action Recommendations
 
-LLM-driven system that turns unstructured customer feedback into clear, prioritized business actions.
+# Feedback to Actions Labels – Project
 
----
+This project processes customer feedback data and converts it into structured actionable labels. It includes a Streamlit dashboard for visualizing insights and exporting results.
 
-## Problem Statement
+## Features
+- Processes raw feedback.
+- Cleans and labels text using ML logic.
+- Streamlit dashboard for analysis.
+- Generates `output_feedback_actions.csv`.
 
-Modern businesses collect vast volumes of unstructured feedback—reviews, surveys, complaint tickets, chat logs, and social media posts. While sentiment analysis is common, translating that feedback into **actionable recommendations** remains a challenge.
+## Project Structure
+```
+feedback_to_actions_labels-main/
+│── data/
+│── feedback_to_actions_labels.py
+│── feedback_dashboard_streamlit.py
+│── output_feedback_actions.csv
+│── README.md
+```
 
----
+## Installation
+```
+pip install pandas numpy streamlit scikit-learn nltk
+```
 
-## Goal
+## Run Script
+```
+python feedback_to_actions_labels.py
+```
 
-Build a **Feedback Reviewer & Action Recommender** that:
+## Run Dashboard
+```
+streamlit run feedback_dashboard_streamlit.py
+```
 
-* Reads raw customer feedback (text)
-* Understands sentiment and emotion (positive / negative / neutral)
-* Detects recurring themes or pain points (e.g., “delivery,” “pricing,” “customer support”)
-* Maps insights to recommended business actions, such as:
+## Input Format
+CSV with columns:
+- feedback_id
+- customer_feedback
 
-  * “Improve delivery partner SLAs”
-  * “Revise pricing communication”
-  * “Launch customer education campaign”
+## Output
+Labeled CSV with:
+- feedback
+- action_label
+- priority
 
----
 
